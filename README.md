@@ -10,8 +10,9 @@ git clone https://github.com/SYSU-DISG/AVoiD-DF.git
 
 ### Download the dataset and weights from the following link:
 ```
-Sorry, due to protocol restrictions, the datasets and weights are not publicly available now.
+https://pan.baidu.com/s/1MckHs-H57jTma5v0o6XYMA
 ```
+(Sorry, due to protocol restrictions, the datasets and weights are not publicly available now.)
 
 We use Python 3.6. Install requirements by running:
 ```

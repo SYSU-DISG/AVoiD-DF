@@ -2,7 +2,6 @@ import os
 import json
 import random
 import glob
-import re
 
 
 def read_split_data(video_root: str, audio_root: str, val_rate: float = 0.2):

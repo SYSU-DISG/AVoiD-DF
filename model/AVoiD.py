@@ -77,9 +77,9 @@ class AVoiD(nn.Module):
         self.fc = nn.Linear(embed_dim * 3, embed_dim)
         # Select
         # self.Select = Select(bs=args.batch_size, device=args.device, embed_dim=embed_dim,
-                             num_heads=num_heads,
-                             mlp_ratio=mlp_ratio, qkv_bias=qkv_bias, qk_scale=qk_scale,
-                             drop_ratio=drop_ratio, attn_drop_ratio=attn_drop_ratio)
+                            # num_heads=num_heads,
+                            # mlp_ratio=mlp_ratio, qkv_bias=qkv_bias, qk_scale=qk_scale,
+                            # drop_ratio=drop_ratio, attn_drop_ratio=attn_drop_ratio)
 
         # if representation_size and not distilled:
             # self.has_logits = True

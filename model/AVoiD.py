@@ -82,20 +82,20 @@ class AVoiD(nn.Module):
                              drop_ratio=drop_ratio, attn_drop_ratio=attn_drop_ratio)
 
         # if representation_size and not distilled:
-            self.has_logits = True
-            self.num_features = representation_size
-            self.pre_logits = nn.Sequential(OrderedDict([
+            # self.has_logits = True
+            # self.num_features = representation_size
+            # self.pre_logits = nn.Sequential(OrderedDict([
                 ("fc", nn.Linear(embed_dim, representation_size)),
                 ("act", nn.Tanh())
             ]))
         # else:
-            self.has_logits = False
-            self.pre_logits = nn.Identity()
+            # self.has_logits = False
+            # self.pre_logits = nn.Identity()
 
         # self.head = nn.Linear(self.num_features, num_classes) if num_classes > 0 else nn.Identity()
         # self.head_dist = None
         # if distilled:
-            self.head_dist = nn.Linear(self.embed_dim, self.num_classes) if num_classes > 0 else nn.Identity()
+            # self.head_dist = nn.Linear(self.embed_dim, self.num_classes) if num_classes > 0 else nn.Identity()
 
         # Weight init
         nn.init.trunc_normal_(self.pos_embed_video, std=0.02)

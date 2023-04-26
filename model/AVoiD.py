@@ -3,9 +3,6 @@ from functools import partial
 from collections import OrderedDict
 import torch
 import torch.nn as nn
-
-from Search_Select import Select
-from Search_Select import Search
 from MMD import MMD, PatchEmbed, Encoder_layer
 
 class AVoiD(nn.Module):
@@ -62,7 +59,7 @@ class AVoiD(nn.Module):
                                         qk_scale=qk_scale,
                                         drop_ratio=drop_ratio, attn_drop_ratio=attn_drop_ratio)
 
-        self.part_select = Search()
+        # self.part_select = Search()
 
         self.video_encoder = nn.Sequential(*[
             Encoder_layer(dim=embed_dim, num_heads=num_heads, mlp_ratio=mlp_ratio, qkv_bias=qkv_bias, qk_scale=qk_scale,
@@ -79,25 +76,25 @@ class AVoiD(nn.Module):
         self.av_fc = nn.Linear(embed_dim * 2, embed_dim)
         self.fc = nn.Linear(embed_dim * 3, embed_dim)
         # Select
-        self.Select = Select(bs=args.batch_size, device=args.device, embed_dim=embed_dim,
+        # self.Select = Select(bs=args.batch_size, device=args.device, embed_dim=embed_dim,
                              num_heads=num_heads,
                              mlp_ratio=mlp_ratio, qkv_bias=qkv_bias, qk_scale=qk_scale,
                              drop_ratio=drop_ratio, attn_drop_ratio=attn_drop_ratio)
 
-        if representation_size and not distilled:
+        # if representation_size and not distilled:
             self.has_logits = True
             self.num_features = representation_size
             self.pre_logits = nn.Sequential(OrderedDict([
                 ("fc", nn.Linear(embed_dim, representation_size)),
                 ("act", nn.Tanh())
             ]))
-        else:
+        # else:
             self.has_logits = False
             self.pre_logits = nn.Identity()
 
-        self.head = nn.Linear(self.num_features, num_classes) if num_classes > 0 else nn.Identity()
-        self.head_dist = None
-        if distilled:
+        # self.head = nn.Linear(self.num_features, num_classes) if num_classes > 0 else nn.Identity()
+        # self.head_dist = None
+        # if distilled:
             self.head_dist = nn.Linear(self.embed_dim, self.num_classes) if num_classes > 0 else nn.Identity()
 
         # Weight init

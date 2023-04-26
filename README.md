@@ -10,7 +10,7 @@ git clone https://github.com/SYSU-DISG/AVoiD-DF.git
 
 ### Download the dataset and weights from the following link:
 ```
-https://pan.baidu.com/s/1MckHs-H57jTma5v0o6XYMA
+Sorry, due to protocol restrictions, the dataset is not publicly available.
 ```
 
 We use Python 3.6. Install requirements by running:
@@ -26,10 +26,13 @@ You can do training on your own data by a simple command:
 ```
 python train.py
 ```
+### Note
+
+Unfortunately, due to protocol restrictions we cannot release the complete source code and models. We have open sourced some of the modules and our training codes are based on the released code of ViT.
 
 ### Acknowledgements
 
-Our work is based on the official version of AVoiD-DF, and some of our codes refer to VIT (Vision Transformer). Thanks for sharing!
+Our work is based on the official version of AVoiD-DF, and some of our codes refer to ViT (Vision Transformer). Thanks for sharing!
 
 ### Citation
 

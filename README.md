@@ -8,7 +8,7 @@
 git clone https://github.com/SYSU-DISG/AVoiD-DF.git
 ```
 
-### Download the dataset and weights from the following link:
+### Download the datasets from the following link:
 ```
 https://pan.baidu.com/s/1MckHs-H57jTma5v0o6XYMA
 ```

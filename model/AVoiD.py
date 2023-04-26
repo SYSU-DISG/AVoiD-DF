@@ -85,9 +85,9 @@ class AVoiD(nn.Module):
             # self.has_logits = True
             # self.num_features = representation_size
             # self.pre_logits = nn.Sequential(OrderedDict([
-                ("fc", nn.Linear(embed_dim, representation_size)),
-                ("act", nn.Tanh())
-            ]))
+                # ("fc", nn.Linear(embed_dim, representation_size)),
+                # ("act", nn.Tanh())
+            # ]))
         # else:
             # self.has_logits = False
             # self.pre_logits = nn.Identity()
